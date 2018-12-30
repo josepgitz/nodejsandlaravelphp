@@ -25,7 +25,7 @@ padding-top: 20px;
     </div>
 @endif
 
-<form action="{{ route('Indiscipline.update', $indiscipline->id) }}" method="POST" class="pull-center" style="border:1px solid blue" >
+<form action="{{route('Indiscipline.update', $indiscipline->id) }}" method="POST" class="pull-center" style="border:1px solid blue" >
         @csrf
         @method('PUT')
      <div class="row">

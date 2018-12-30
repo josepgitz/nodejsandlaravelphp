@@ -67,23 +67,13 @@ class StudentRegController extends Controller
                         ->with('success','Student created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\studentReg  $studentReg
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show(studentReg $studentReg)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\studentReg  $studentReg
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $studentReg = studentReg::find($id);
@@ -116,6 +106,7 @@ class StudentRegController extends Controller
             'Birth_cert_no' => 'required',
             'disabled' => 'required',
         ]);
+		$studentReg=studentReg::find($studentReg->Birth_cert_no);
         $studentReg->fname = $request['fname'];
         $studentReg->sname = $request['sname'];
         $studentReg->lname = $request['lname'];
